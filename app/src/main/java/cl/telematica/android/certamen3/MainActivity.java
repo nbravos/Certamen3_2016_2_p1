@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import cl.telematica.android.certamen3.Fragment.Feed_Implemet;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +15,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import cl.telematica.android.certamen3.Model.Feed;
+//import cl.telematica.android.certamen3.Presenter.MyAsyncTaskExecutor;
+
+public class MainActivity extends BaseActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -24,19 +28,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createMyRecyclerView();
-        MyAsyncTaskExecutor.getInstance().executeMyAsynctask(this, mRecyclerView);
+        setContentFrame(R.id.content_frame);
+        switchContent(Feed_Implemet.nuevoFeed_Implement(), null);
+
+        //createMyRecyclerView();
+       // MyAsyncTaskExecutor.getInstance().executeMyAsynctask(this, mRecyclerView);
     }
 
-    public void createMyRecyclerView() {
+  /*  public void createMyRecyclerView() {
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
-    }
-
-    public List<Feed> getFeeds(String result) {
+   }
+*/
+   /* public List<Feed> getFeeds(String result) {
         List<Feed> feeds = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(result);
@@ -84,10 +91,10 @@ public class MainActivity extends AppCompatActivity {
             /**
              * You should manage the action to show the favorite items saved by the user
              */
-            return true;
+         /*   return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
 }

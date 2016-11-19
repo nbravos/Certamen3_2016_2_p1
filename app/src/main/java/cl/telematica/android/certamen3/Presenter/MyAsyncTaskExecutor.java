@@ -1,11 +1,14 @@
-package cl.telematica.android.certamen3;
+package cl.telematica.android.certamen3.Presenter;
 
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 
+import cl.telematica.android.certamen3.HttpServerConnection;
+import cl.telematica.android.certamen3.MainActivity;
+
 /**
  * Created by franciscocabezas on 11/18/16.
- */
+
 
 public class MyAsyncTaskExecutor {
 
@@ -50,3 +53,4 @@ public class MyAsyncTaskExecutor {
     }
 
 }
+ */
